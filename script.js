@@ -82,7 +82,7 @@ async function sendToBackend(userMessage) {
   };
 
   try {
-    const response = await fetch('http://127.0.0.1:8000/gemini/generate', {
+    const response = await fetch('https://backendvoicebot-2.onrender.com/gemini/generate', { // URL actualizada
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -146,7 +146,7 @@ async function analyzeEmotionAndCost(conversationText) {
   };
 
   try {
-    const response = await fetch('http://127.0.0.1:8000/analyze_emotion', {
+    const response = await fetch('https://backendvoicebot-2.onrender.com/analyze_emotion', { // URL actualizada
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
