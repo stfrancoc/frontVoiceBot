@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat de Voz con IA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div style="display: flex;flex-direction: column;justify-content: center;">
+        <div class="container">
+            <h1>Negocia con nuestro asesor virtual</h1>
+
+            <!-- Formulario para seleccionar el usuario -->
+            <div id="user-select-container">
+                <label for="user-select">Selecciona un usuario:</label>
+                <select id="user-select">
+                    <option value="1">Juan Perez</option>
+                    <option value="2">María Rodríguez</option>
+                    <option value="3">Carlos López</option>
+                </select>
+
+            </div>
+
+            <!-- Área para mostrar el texto de la IA -->
+            <div id="response-container">
+                <p id="response-text">Haz una pregunta y escucha la respuesta</p>
+            </div>
+
+            <!-- Botón para iniciar la grabación de voz -->
+            <button id="record-button" onclick="startRecording()">Hablar</button>
+            <!-- Botón para finalizar la interacción -->
+            <button id="end-interaction" onclick="endInteraction()">Finalizar Interacción</button>
+
+        </div>
+
+        <div id="container-historial" style="display: flex;flex-direction: column; justify-content: center; background: white;
+        padding: 20px;align-items: center;margin-top: 20px;border: none; border-radius: 5px;max-width: 500px;">
+            <h2>Historial de negociacion</h2>
+            <div id="conversation-container"></div> <!-- Aquí se mostrará el historial de la conversación -->
+            <button onclick="exportConversation()">Exportar Conversación</button>
+            <!-- Botón para exportar la conversación -->
+        </div>
+
+        <!-- Sección para mostrar el análisis de emociones -->
+        <div id="emotion-analysis" style="display: flex;flex-direction: column; justify-content: center; background: white;
+        padding: 20px;align-items: center;margin-top: 20px;border: none; border-radius: 5px;max-width: 500px;">
+            <h3>Análisis de Emociones:</h3>
+            <p>Emoción Dominante: </p>
+            <p>Sentimiento: </p>
+            <p>Indicador de Negociación: </p>
+        </div>
+
+        <!-- Sección para mostrar el análisis de costos -->
+        <div id="cost-analysis" style="display: flex;flex-direction: column; justify-content: center; background: white;
+        padding: 20px;align-items: center;margin-top: 20px;border: none; border-radius: 5px;max-width: 500px;">
+            <h3>Análisis de Costos:</h3>
+            <p>Tokens Usados: </p>
+            <p>Costo Estimado: </p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
